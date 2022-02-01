@@ -2,11 +2,7 @@
 import ecdcpipeline.ContainerBuildNode
 import ecdcpipeline.PipelineBuilder
 
-project = "file_writer_sanitizer"
-
-clangformat_os = "ubuntu2004"
-test_and_coverage_os = "ubuntu2004"
-release_os = "centos7-release"
+project = "file-writer-sanitizer"
 
 container_build_nodes = [
   'centos7': ContainerBuildNode.getDefaultContainerBuildNode('centos7-gcc8'),
