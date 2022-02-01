@@ -6,7 +6,7 @@ project = "file-writer-sanitizer"
 
 container_build_nodes = [
   'address': ContainerBuildNode.getDefaultContainerBuildNode('centos7-gcc8'),
-  'thread': ContainerBuildNode.getDefaultContainerBuildNode('centos7-gcc8'),
+/*  'thread': ContainerBuildNode.getDefaultContainerBuildNode('centos7-gcc8'),*/
 ]
 
 // Set number of old builds to keep.
