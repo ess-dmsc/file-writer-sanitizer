@@ -10,7 +10,11 @@ container_build_nodes = [
 ]
 
 // Set number of old builds to keep.
-properties([[
+properties([
+  pipelineTriggers([
+      cron('5 3 * * *')
+    ]),
+  [
   $class: 'BuildDiscarderProperty',
   strategy: [
     $class: 'LogRotator',
