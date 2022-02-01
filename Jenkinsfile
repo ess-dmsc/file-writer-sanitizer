@@ -29,7 +29,7 @@ builders = pipeline_builder.createBuilders { container ->
     dir(pipeline_builder.project) {
       checkout([  
                   $class: 'GitSCM', 
-                  branches: [[name: 'refs/heads/master']], 
+                  branches: [[name: 'refs/heads/main']], 
                   userRemoteConfigs: [[url: 'https://github.com/ess-dmsc/kafka-to-nexus.git']]
               ])
     }
