@@ -5,7 +5,8 @@ import ecdcpipeline.PipelineBuilder
 project = "file-writer-sanitizer"
 
 container_build_nodes = [
-  'centos7': ContainerBuildNode.getDefaultContainerBuildNode('centos7-gcc8'),
+  'address': ContainerBuildNode.getDefaultContainerBuildNode('centos7-gcc8'),
+  'thread': ContainerBuildNode.getDefaultContainerBuildNode('centos7-gcc8'),
 ]
 
 // Set number of old builds to keep.
@@ -53,7 +54,7 @@ builders = pipeline_builder.createBuilders { container ->
     container.sh """
       cd build
       . ./activate_run.sh
-      cmake -DSANITIZER=address ../${pipeline_builder.project}
+      cmake -DSANITIZER=${container.key} ../${pipeline_builder.project}
     """
   }  // stage
 
