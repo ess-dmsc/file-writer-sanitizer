@@ -85,6 +85,7 @@ builders = pipeline_builder.createBuilders { container ->
 node {
   dir("${project}") {
     try {
+      scm checkout
       error("FAIL")
     } catch (e) {
       failure_function(e, 'Checkout failed')
