@@ -108,4 +108,3 @@ def failure_function(exception_obj, failureMessage) {
   throw exception_obj
 }
 
-
