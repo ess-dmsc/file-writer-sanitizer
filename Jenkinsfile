@@ -43,13 +43,9 @@ builders = pipeline_builder.createBuilders { container ->
 
   pipeline_builder.stage("${container.key}: Dependencies") {
 
-    def conan_remote = "ess-dmsc-local"
     container.sh """
       mkdir build
       cd build
-      conan remote add \
-        --insert 0 \
-        ${conan_remote} ${local_conan_server}
       conan install --build=outdated ../${pipeline_builder.project}/conanfile.txt
     """
   }  // stage
